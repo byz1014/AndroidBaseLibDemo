@@ -1,0 +1,26 @@
+package com.luculent.base.adapter.entity;
+
+import java.io.Serializable;
+
+/**
+ * @Author byz
+ * @CreateData 2020/10/28 11:11
+ */
+public abstract class SectionMultiEntity<T> implements Serializable, MultiItemEntity {
+
+    public boolean isHeader;
+    public T t;
+    public String header;
+
+    public SectionMultiEntity(boolean isHeader, String header) {
+        this.isHeader = isHeader;
+        this.header = header;
+        this.t = null;
+    }
+
+    public SectionMultiEntity(T t) {
+        this.isHeader = false;
+        this.header = null;
+        this.t = t;
+    }
+}
